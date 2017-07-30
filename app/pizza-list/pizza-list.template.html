@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="pizza-filter form-group">
+    Filter: <input ng-model="$ctrl.query" />
+  </div>
+  <div class="pizza-list">
+    <table class="table table-striped">
+      <tr>
+        <th>Number</th>
+        <th>Pizza</th>
+        <th>Ingredients</th>
+        <th>
+        <button ng-click="sortBy('price')">Price</button>
+        <span class="sortorder" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th></th>
+      </tr>
+      <tr ng-repeat="pizza in $ctrl.pizzas | filter:$ctrl.query | orderBy:propertyName:reverse">
+        <td>{{pizza.number}}</td>
+        <td>{{pizza.name}}</td>
+        <td>{{pizza.ingredients}}</td>
+        <td>{{pizza.price}}</td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click='toggleModal()'>Buy</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

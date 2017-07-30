@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<title>AgileEngine Test</title>
+		<link rel="stylesheet" href="bootstrap.min.css" />
+		<link rel="stylesheet" href="app.css" />
+		<script src="angular.js"></script>
+		<script src="angular-route.js"></script>
+		<script src="app.module.js"></script>
+		<script src="app.config.js"></script>
+		<script src="pizza-list/pizza-list.module.js"></script>
+		<script src="pizza-list/pizza-list.component.js"></script>
+		<script src="cart-list/cart-list.module.js"></script>
+		<script src="cart-list/cart-list.component.js"></script>
+	</head>
+	<body ng-app="app">
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav">
+						<li><a href="#/main">Main</a></li>
+						<li><a href="#/cart">Cart</a></li>
+						<li><a>History</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div ng-view></div>
+		</main>
+	</body>
+</html>
