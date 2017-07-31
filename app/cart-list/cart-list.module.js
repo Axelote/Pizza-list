@@ -1,1 +1,1 @@
-angular.module('cartList', []);
+angular.module('cartList', ['pizzaList']);

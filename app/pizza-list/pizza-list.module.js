@@ -1,1 +1,1 @@
-angular.module('pizzaList', []);
+var pizzaList = angular.module('pizzaList', ['modal']);

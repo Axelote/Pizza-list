@@ -19,8 +19,11 @@
         <td>{{pizza.name}}</td>
         <td>{{pizza.ingredients}}</td>
         <td>{{pizza.price}}</td>
-        <td><button class="btn btn-default btn-sm" type="button" ng-click='toggleModal()'>Buy</button></td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click="showModalEvent()">Buy</button></td>
       </tr>
     </table>
   </div>
+</div>
+<div ng-if="showModal">
+    <modal ng-click="closeModalEvent()"></modal> 
 </div>

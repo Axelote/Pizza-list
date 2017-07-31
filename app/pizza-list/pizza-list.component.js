@@ -31,21 +31,18 @@ angular.
       ];
       $scope.propertyName = 'price';
       $scope.reverse = false;
+      $scope.showModal = false;
 
       $scope.sortBy = function(propertyName) {
         $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
         $scope.propertyName = propertyName;
-      };
-      $scope.show = function() {
-        ModalService.showModal({
-            template: '<div>YES</div>',
-            controller: "ModalController"
-        }).then(function(modal) {
-            modal.element.modal();
-            modal.close.then(function(result) {
-                $scope.message = "You said " + result;
-            });
+      };      
+      $scope.showModalEvent = function() {
+            $scope.showModal = !$scope.showModal;
         });
-    };
+      };
+      $scope.closeModalEvent = function() {
+          $scope.showModal = false;
+      }
     }
   });
