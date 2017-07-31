@@ -38,8 +38,7 @@ angular.
         $scope.propertyName = propertyName;
       };      
       $scope.showModalEvent = function() {
-            $scope.showModal = !$scope.showModal;
-        });
+            $scope.showModal = !$scope.showModal;    
       };
       $scope.closeModalEvent = function() {
           $scope.showModal = false;
