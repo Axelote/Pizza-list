@@ -9,8 +9,8 @@
         <th>Pizza</th>
         <th>Ingredients</th>
         <th>
-        <button ng-click="sortBy('price')">Price</button>
-        <span class="sortorder" ng-class="{reverse: reverse}"></span>
+            <button ng-click="sortBy('price')">Price</button>
+            <span class="sortorder" ng-class="{reverse: reverse}"></span>
         </th>
         <th></th>
       </tr>
@@ -24,6 +24,7 @@
     </table>
   </div>
 </div>
+
 <div ng-if="showModal">
     <modal ng-click="closeModalEvent()"></modal> 
 </div>
