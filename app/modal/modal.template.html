@@ -1,4 +1,4 @@
-<div class="modal fade in" style="display: block;">
+<div class="modal fade in" style="display: block;" ng-controller="pizzaController">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -6,7 +6,9 @@
         <h4 class="modal-title">Pizza modal</h4>
       </div>
       <div class="modal-body">
-        <p ng-repeat="pizza in $ctrl.pizzas">{{$pizza.number}}</p>
+        <div ng-repeat="pizza in pizza.pizzas">
+          {{pizza.name}}
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default">Close</button>

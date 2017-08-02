@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="pizzaController">
   <div class="pizza-filter form-group">
     Filter: <input ng-model="$ctrl.query" />
   </div>
-  <div class="pizza-list">
+  <div class="pizza-list" >
     <table class="table table-striped">
       <tr>
         <th>Number</th>
@@ -14,17 +14,16 @@
         </th>
         <th></th>
       </tr>
-      <tr ng-repeat="pizza in $ctrl.pizzas | filter:$ctrl.query | orderBy:propertyName:reverse">
+      <tr ng-repeat="pizza in pizza.pizzas | filter:$ctrl.query | orderBy:propertyName:reverse">
         <td>{{pizza.number}}</td>
         <td>{{pizza.name}}</td>
         <td>{{pizza.ingredients}}</td>
         <td>{{pizza.price}}</td>
-        <td><button class="btn btn-default btn-sm" type="button" ng-click="showModalEvent()">Buy</button></td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click="addProduct(); showModalEvent()">Buy</button></td>
       </tr>
     </table>
   </div>
-</div>
-
-<div ng-if="showModal">
+  <div ng-if="showModal">
     <modal ng-click="closeModalEvent()"></modal> 
+  </div>
 </div>

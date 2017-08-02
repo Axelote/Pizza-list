@@ -1,10 +1,15 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="pizzaController">
   <div class="pizza-list">
     <table class="table table-striped">
       <tr>
         <th>Number</th>
         <th>Pizza</th>
         <th>Price</th>
+      </tr>
+      <tr ng-repeat="pizza in pizza.pizzas">
+        <td>{{pizza.number}}</td>
+        <td>{{pizza.name}}</td>
+        <td>{{pizza.price}}</td>
       </tr>
     </table>
   </div>
