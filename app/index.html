@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" ng-app="app">
 	<head>
 		<meta charset="utf-8">
 		<title>Pizza list</title>
@@ -8,21 +8,21 @@
 		<script src="angular.js"></script>
 		<script src="angular-route.js"></script>
 		<script src="app.module.js"></script>
-		<script src="app.config.js"></script>
+		<script src="app.js"></script>
 		<script src="pizza-list/pizza-list.module.js"></script>
 		<script src="pizza-list/pizza-list.component.js"></script>
-		<script src="cart-list/cart-list.module.js"></script>
-		<script src="cart-list/cart-list.component.js"></script>
 		<script src="modal/modal.module.js"></script>
 		<script src="modal/modal.component.js"></script>
+		<script src="cart-list/cart-list.module.js"></script>
+		<script src="cart-list/cart-list.component.js"></script>
 	</head>
-	<body ng-app="app">
+	<body>
 		<header>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<ul class="nav navbar-nav">
-						<li ng-class="{active: selected}"><a href="#/main" >Main</a></li>
-						<li><a href="#/cart" ng-class="{active: selected}">Cart</a></li>
+						<li ng-class="{'active':active}" ng-click="toggleMenu()"><a href="#/main" >Main</a></li>
+						<li ng-class="{'active':active}" ng-click="toggleMenu()"><a href="#/cart">Cart</a></li>
 						<li><a>History</a></li>
 					</ul>
 				</div>

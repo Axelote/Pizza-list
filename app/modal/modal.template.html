@@ -6,12 +6,12 @@
         <h4 class="modal-title">Pizza modal</h4>
       </div>
       <div class="modal-body">
-        <div ng-repeat="pizza in pizza.pizzas">
-          {{pizza.name}}
+        <div ng-repeat="pizzaAdded in pizzasAdded">
+          {{pizzaAdded.tt}}
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default">Close</button>
+        <button type="button" class="btn btn-default" ng-click="showModalEvent()">Close</button>
       </div>
     </div>
   </div>
