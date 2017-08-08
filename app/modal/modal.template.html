@@ -2,16 +2,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close"><span>&times;</span></button>
-        <h4 class="modal-title">Pizza modal</h4>
+        <h4 class="modal-title">Success</h4>
       </div>
       <div class="modal-body">
-        <div ng-repeat="pizzaAdded in pizzasAdded">
-          {{pizzaAdded.tt}}
+        <div ng-repeat="pizzaAdded in pizza.pizzasAdded track by $index">
+          Pizza was added to cart <b>{{pizzaAdded.name}}</b>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="showModalEvent()">Close</button>
       </div>
     </div>
   </div>

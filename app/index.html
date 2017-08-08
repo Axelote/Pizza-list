@@ -15,15 +15,17 @@
 		<script src="modal/modal.component.js"></script>
 		<script src="cart-list/cart-list.module.js"></script>
 		<script src="cart-list/cart-list.component.js"></script>
+		<script src="history/history.module.js"></script>
+		<script src="history/history.component.js"></script>
 	</head>
 	<body>
 		<header>
 			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<ul class="nav navbar-nav">
-						<li ng-class="{'active':active}" ng-click="toggleMenu()"><a href="#/main" >Main</a></li>
-						<li ng-class="{'active':active}" ng-click="toggleMenu()"><a href="#/cart">Cart</a></li>
-						<li><a>History</a></li>
+				<div class="container-fluid" ng-controller="toggleMenu">
+					<ul class="nav navbar-nav" ng-controller="badgeQuantity">
+						<li ng-class="{active: isActive('/main')}"><a href="#/main" >Main</a></li>
+						<li ng-class="{active: isActive('/cart')}"><a href="#/cart">Cart <span class="badge">{{cartQuantity()}}</span></a></li>
+						<li ng-class="{active: isActive('/history')}"><a href="#/history">History <span class="badge">{{historyQuantity()}}</span></a></li>
 					</ul>
 				</div>
 			</nav>

@@ -5,11 +5,22 @@
         <th>Number</th>
         <th>Pizza</th>
         <th>Price</th>
+        <th></th>
+        <th></th>
       </tr>
-      <tr ng-repeat="pizza in pizza.pizzas">
-        <td>{{pizza.number}}</td>
+      <tr ng-repeat="pizza in pizza.pizzasAdded track by $index">
+        <td>{{$index+1}}</td>
         <td>{{pizza.name}}</td>
         <td>{{pizza.price}}</td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click="deleteFromCart(pizza)">Delete</button></td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click="confirmOrder(pizza);">Confirm</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><strong>Total: <span>{{total()}}</span></strong></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
   </div>

@@ -14,16 +14,14 @@
         </th>
         <th></th>
       </tr>
-      <tr ng-repeat="pizza in pizza.pizzas | filter:$ctrl.query | orderBy:propertyName:reverse track by $index" index="{{$index}}">
-        <td>{{pizza.number}}</td>
+      <tr ng-repeat="pizza in pizza.pizzas | filter:$ctrl.query | orderBy:propertyName:reverse track by $index">
+        <td>{{$index+1}}</td>
         <td>{{pizza.name}}</td>
         <td>{{pizza.ingredients}}</td>
         <td>{{pizza.price}}</td>
-        <td><button class="btn btn-default btn-sm" type="button" ng-click="addToCart(); showModalEvent()">Buy</button></td>
+        <td><button class="btn btn-default btn-sm" type="button" ng-click="addToCart(pizza); showModalEvent();">Buy</button></td>
       </tr>
     </table>
   </div>
-  <div>
-    <modal ng-click="closeModalEvent()" ng-class="{'hidden':selectedClass}"></modal> 
-  </div>
+  <modal ng-class="{'hidden':showModal}"></modal>
 </div>
